@@ -1,4 +1,13 @@
+import React from "react";
 import ReactDOM from "react-dom";
-import Clock from "./component";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-// ReactDOM.render(new Clock().print("bn-BD"), document.getElementById("root"));
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+
+reportWebVitals();

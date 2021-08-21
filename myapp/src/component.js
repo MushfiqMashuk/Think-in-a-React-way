@@ -17,22 +17,23 @@ function MyClock({ locale }) {
 
 // ReactDOM.render(<MyClock locale='bn-BD'/>, document.getElementById("root"));
 
-
 console.dir(React.Component);
 
-class Clock extends React.Component{
+class Clock extends React.Component {
+  render() {
+    // never change this.props inside the class, Because react component re-render whenever a props changes
 
-    super constructor(props){
-        this.props = props;
-    }
-
-    render() {
-        return (
-            <h1>{new Date().toLocaleTimeString()}</h1>
-        );
-    }
+    return (
+      <h1>
+        Hello {this.props.children} it's {new Date().toLocaleTimeString(this.props.locale)}
+      </h1>
+    );
+  }
 }
 
-ReactDOM.render(<Clock locale="bn-BD"/>, document.getElementById("root"));
+ReactDOM.render(
+  <Clock locale="bn-BD">Rahim vai</Clock>,
+  document.getElementById("root")
+);
 
-export default Clock;
+export default MyClock;
