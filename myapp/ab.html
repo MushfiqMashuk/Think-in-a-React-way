@@ -9,13 +9,43 @@
 <body>
     <button onclick="sayHello()">Say Hello</button>
 
-    <a href="./notFound.html" onclick="console.log('link will not work properly'); return false">Click Me</a> // I have changed the default behaviour of the anchor tag by return false 
-
+    <a href="./notFound.html" onclick="console.log('link will not work properly'); return false">Click Me</a>
+    <!-- I have changed the default behaviour of the anchor tag by return false -->
     <script>
-
+        
         function sayHello() {
             alert('Hello');
         }
+
+        const lang = {
+            name: 'JavaScript',
+            libs: ['React', 'jQuery', 'Vue'],
+
+            getLibs: function (text) {
+                console.log(this.name + " " + text);
+            },
+
+            printLibs: function () {
+                this.libs.forEach(function (lib) {
+                    console.log(`${this.name} library ${lib}`);
+                }.bind(this));
+            }
+        }
+
+        lang.getLibs('hmmm'); //Javascript undefined
+
+        let a = lang.getLibs;
+        this.name = 87;
+        a(); // output: 87 undefined. because the func is being invoked in the global scope
+        
+        // but this also can be changed
+
+        a = a.bind(lang, 'nice');
+
+        a(); // Javascript nice
+
+
+        lang.printLibs();
 
     </script>
 </body>

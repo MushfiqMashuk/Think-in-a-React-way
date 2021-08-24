@@ -1,9 +1,9 @@
-import Clock from './components/Clock';
+import Form from "./components/Form";
 
 function App() {
   return (
     <div>
-      <Clock locale="bn-BD">Rafiq vai</Clock>
+      <Form></Form>
     </div>
   );
 }
