@@ -11,7 +11,18 @@
 
     <a href="./notFound.html" onclick="console.log('link will not work properly'); return false">Click Me</a>
     <!-- I have changed the default behaviour of the anchor tag by return false -->
+
+    <select name="lib" id="lib" value="nice">
+        <option value="react">React</option>
+        <option value="jQuery">jQuery</option>
+    </select>
+
     <script>
+        
+        const lib = document.getElementById("lib");
+        lib.addEventListener('change', (e) => {
+            console.log(e.target);
+        });
         
         function sayHello() {
             alert('Hello');

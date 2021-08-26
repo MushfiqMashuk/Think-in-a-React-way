@@ -1,9 +1,9 @@
-import Form from "./components/Form";
+import Calculator from "./components/Calculator";
 
 function App() {
   return (
     <div>
-      <Form></Form>
+      <Calculator/>
     </div>
   );
 }
