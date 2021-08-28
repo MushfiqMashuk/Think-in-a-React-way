@@ -43,3 +43,10 @@ export default class Calculator extends React.Component {
     );
   }
 }
+
+/**
+  *jodi amn situation create hoy jeikhane multiple component k akta single state afect kortese, taile individually state manage na kore akta single component theke state manage korte hobe. then state gulo child element a props hishabe pathate hobe. single source of truth. 
+  
+  * top-down data flow er upor rely korte hobe. 
+  * shob shomoy try korte hobe state jate beshi bere na jay. state theke kono kisu derive kora gele sheta korar cheshta korte hobe.
+*/
