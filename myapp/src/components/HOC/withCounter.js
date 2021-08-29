@@ -23,7 +23,7 @@ const withCounter = (OriginalComponent) => {
 
       return (
         <OriginalComponent
-          counter={counter}
+          count={counter}
           incrementCount={this.incrementCount}
         />
       );
