@@ -8,12 +8,25 @@ import React from "react";
 import Section from "./components/contextAPI/Section";
 import ClickCounter from "./components/renderProps/ClickCounter";
 import Counter from "./components/renderProps/Counter";
-import ThemeContext from "./components/contextAPI/contexts/themeContext";
+import ThemeContext from "./contexts/themeContext";
 //import HoverCounter from "./components/renderProps/HoverCounter";
 
 export default class App extends React.Component {
   state = {
     theme: "dark",
+  };
+
+  switchTheme = () => {
+    this.setState(({ theme }) => {
+      if (theme === "dark") {
+        return {
+          theme: "light",
+        };
+      }
+      return {
+        theme: "dark",
+      };
+    });
   };
 
   render() {
@@ -26,10 +39,9 @@ export default class App extends React.Component {
           )}
         />
 
-        <ThemeContext.Provider value={{ theme }}>
+        <ThemeContext.Provider value={{ theme, switchTheme: this.switchTheme }}>
           <Section />
         </ThemeContext.Provider>
-
         {/* <Counter
         render={(count, incrementCount) => (
           <HoverCounter count={count} incrementCount={incrementCount} />
