@@ -14,23 +14,22 @@ import ThemeContext from "./contexts/themeContext";
 export default class App extends React.Component {
   state = {
     theme: "dark",
-  };
 
-  switchTheme = () => {
-    this.setState(({ theme }) => {
-      if (theme === "dark") {
+    switchTheme: () => {
+      this.setState(({ theme }) => {
+        if (theme === "dark") {
+          return {
+            theme: "light",
+          };
+        }
         return {
-          theme: "light",
+          theme: "dark",
         };
-      }
-      return {
-        theme: "dark",
-      };
-    });
+      });
+    },
   };
 
   render() {
-    const { theme } = this.state;
     return (
       <div className="app">
         <Counter // this process is called render props
@@ -39,7 +38,11 @@ export default class App extends React.Component {
           )}
         />
 
-        <ThemeContext.Provider value={{ theme, switchTheme: this.switchTheme }}>
+        {/*
+        By default, App component rerender holeo Provider er Consumer ra rerender hobe na. Jodi na amra kono reference type k value hishebe pass kori, like- object, array. That's why amdr k amon kisu pass korte hobe jeta react manage kore. State.
+      */}
+
+        <ThemeContext.Provider value={this.state}>
           <Section />
         </ThemeContext.Provider>
         {/* <Counter

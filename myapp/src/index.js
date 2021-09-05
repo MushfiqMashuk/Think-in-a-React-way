@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+//import Todo from "./Hooks/Todo";
 import reportWebVitals from "./reportWebVitals";
 
 // class Test {
@@ -18,6 +18,44 @@ import reportWebVitals from "./reportWebVitals";
 
 // const NewTest = new Test();
 
+let states = []; // [0: [value, setValue], 1: [value, setValue], 2: [value, setValue]]
+let i = -1; 
+
+function useState(stateValue) {
+  const setState = (newValue) => {
+    
+  };
+
+  return [stateValue, setState];
+}
+
+function Todo() {
+  const [item, setItem] = useState("");
+  const [warning, setWarning] = useState(null);
+
+  const handleClick = (e) => {
+    const target = e.target;
+
+    const updateWarning = target.value.includes(".js")
+      ? "You need Javascript knowledge!"
+      : null;
+
+    setItem(target.value);
+    setWarning(updateWarning);
+  };
+
+  return (
+    <div>
+      <p>{item}</p>
+      <textarea name="todo" value={item} onChange={handleClick}></textarea>
+
+      <hr />
+
+      <h1 value={warning}>{warning || "Good Choice!"}</h1>
+    </div>
+  );
+}
+
 ReactDOM.render(
   <React.StrictMode>
     {/* <div>
@@ -26,7 +64,7 @@ ReactDOM.render(
       </NewTest.Provider>
       <NewTest.Consumer>{(value) => value.theme}</NewTest.Consumer>
     </div> */}
-    <App />
+    <Todo />
   </React.StrictMode>,
   document.getElementById("root")
 );
