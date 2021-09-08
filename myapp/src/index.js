@@ -1,7 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
+//import App from "./App";
 //import Todo from "./Hooks/Todo";
+import Counter2 from "./Hooks/Counter2";
 import reportWebVitals from "./reportWebVitals";
+
+ReactDOM.render(
+  <React.StrictMode>
+    {/* <div>
+      <NewTest.Provider value={{ theme: "dark" }}>
+        This is a new Element
+      </NewTest.Provider>
+      <NewTest.Consumer>{(value) => value.theme}</NewTest.Consumer>
+    </div> */}
+    <Counter2 />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+
+reportWebVitals();
 
 // class Test {
 //   constructor(value = null) {
@@ -18,55 +35,58 @@ import reportWebVitals from "./reportWebVitals";
 
 // const NewTest = new Test();
 
-let states = []; // [0: [value, setValue], 1: [value, setValue], 2: [value, setValue]]
-let i = -1; 
+// let states = []; // [0: [value, setValue], 1: [value, setValue], 2: [value, setValue]]
+// let i = -1;
+// console.log("From Global: " + i);
 
-function useState(stateValue) {
-  const setState = (newValue) => {
-    
-  };
+// function useState(stateValue) {
+//   const index = i++;
 
-  return [stateValue, setState];
-}
+//   console.log(i);
 
-function Todo() {
-  const [item, setItem] = useState("");
-  const [warning, setWarning] = useState(null);
+//   if (states[index]) {
+//     return states[index];
+//   }
 
-  const handleClick = (e) => {
-    const target = e.target;
+//   const setState = (newValue) => {
+//     states[index][0] = newValue;
+//     myFunctin();
+//   };
 
-    const updateWarning = target.value.includes(".js")
-      ? "You need Javascript knowledge!"
-      : null;
+//   states[index] = [stateValue, setState];
 
-    setItem(target.value);
-    setWarning(updateWarning);
-  };
+//   return states[index];
+// }
 
-  return (
-    <div>
-      <p>{item}</p>
-      <textarea name="todo" value={item} onChange={handleClick}></textarea>
+// function Todo() {
+//   const [item, setItem] = useState("");
+//   const [warning, setWarning] = useState(null);
 
-      <hr />
+//   const handleClick = (e) => {
+//     const target = e.target;
 
-      <h1 value={warning}>{warning || "Good Choice!"}</h1>
-    </div>
-  );
-}
+//     const updateWarning = target.value.includes(".js")
+//       ? "You need Javascript knowledge!"
+//       : null;
 
-ReactDOM.render(
-  <React.StrictMode>
-    {/* <div>
-      <NewTest.Provider value={{ theme: "dark" }}>
-        This is a new Element
-      </NewTest.Provider>
-      <NewTest.Consumer>{(value) => value.theme}</NewTest.Consumer>
-    </div> */}
-    <Todo />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+//     setItem(target.value);
+//     setWarning(updateWarning);
+//   };
 
-reportWebVitals();
+//   return (
+//     <div>
+//       <p>{item}</p>
+//       <textarea name="todo" value={item} onChange={handleClick}></textarea>
+
+//       <hr />
+
+//       <h1 value={warning}>{warning || "Good Choice!"}</h1>
+//     </div>
+//   );
+// }
+
+// const myFunctin = () => {
+//   ReactDOM.render(<Todo />, document.getElementById("root"));
+// };
+
+// myFunctin();

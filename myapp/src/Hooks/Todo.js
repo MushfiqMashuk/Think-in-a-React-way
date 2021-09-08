@@ -1,28 +1,51 @@
 import React from "react";
 
+/**
+ * We always have to declare Hooks on the top level of a component.
+ * We can not use Hooks in any other function except the Component func
+ */
+
 export default function Todo() {
-  const [item, setItem] = React.useState("");
-  const [warning, setWarning] = React.useState(null);
+  const [todo, setItem] = React.useState({
+    title: "",
+    description: "",
+  });
 
   const handleClick = (e) => {
     const target = e.target;
 
-    const updateWarning = target.value.includes(".js")
-      ? "You need Javascript knowledge!"
-      : null;
+    if (target.name === "title") {
+      setItem({
+        ...todo,
+        title: target.value,
+      });
+    }
 
-    setItem(target.value);
-    setWarning(updateWarning);
+    if (target.name === "description") {
+      setItem({
+        ...todo,
+        description: target.value,
+      });
+    }
   };
+
+  const { title, description } = todo;
 
   return (
     <div>
-      <p>{item}</p>
-      <textarea name="todo" value={item} onChange={handleClick}></textarea>
+      <p>{title}</p>
+
+      <p>
+        <input type="text" name="title" value={title} onChange={handleClick} />
+      </p>
+
+      <textarea
+        name="description"
+        value={description}
+        onChange={handleClick}
+      ></textarea>
 
       <hr />
-
-      <h1 value={warning}>{warning || "Good Choice!"}</h1>
     </div>
   );
 }
