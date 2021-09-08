@@ -2,8 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 //import App from "./App";
 //import Todo from "./Hooks/Todo";
-import Counter2 from "./Hooks/Counter2";
+//import Counter2 from "./Hooks/Counter2";
 import reportWebVitals from "./reportWebVitals";
+import Form from './Hooks/Form';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,7 +14,7 @@ ReactDOM.render(
       </NewTest.Provider>
       <NewTest.Consumer>{(value) => value.theme}</NewTest.Consumer>
     </div> */}
-    <Counter2 />
+    <Form />
   </React.StrictMode>,
   document.getElementById("root")
 );

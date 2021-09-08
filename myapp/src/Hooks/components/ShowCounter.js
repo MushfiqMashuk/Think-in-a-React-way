@@ -5,4 +5,4 @@ function ShowCounter({ count }) {
   return <p>{count}</p>;
 }
 
-export default React.memo(ShowCounter); // This memo is like a Higher order component (HOC), takes a component and return upgraded one. 
+export default React.memo(ShowCounter); // This memo is like a Higher order component (HOC), takes a component and return upgraded one.
