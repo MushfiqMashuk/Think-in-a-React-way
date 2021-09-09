@@ -20,7 +20,7 @@ export default function Timer() {
 
     return () => {
       clearInterval(interval);
-    }
+    };
   }, []); //empty array means there is no dependency, so this will only invoked once. like componentShouldMount()
 
   const handleClick = () => {
