@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import GetPost2 from "./Hooks/Fetch/GetPost2";
+import LayoutComponent from "./Hooks/customHook/LayoutComponent";
+//import GetPost2 from "./Hooks/Fetch/GetPost2";
 //import BaseComponent from "./Hooks/contextAPI/BaseComponent";
 //import Counter4 from "./Hooks/Counter4";
 //import Time from "./Hooks/Time";
@@ -19,7 +20,7 @@ ReactDOM.render(
       </NewTest.Provider>
       <NewTest.Consumer>{(value) => value.theme}</NewTest.Consumer>
     </div> */}
-    <GetPost2 />
+    <LayoutComponent />
   </React.StrictMode>,
   document.getElementById("root")
 );
