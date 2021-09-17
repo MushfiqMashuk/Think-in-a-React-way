@@ -1,6 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import LayoutComponent from "./Hooks/customHook/LayoutComponent";
+import App from "./Router/App";
+//import App2 from "./App2";
+//import Play from "./stylingComponents/Play";
+//import LayoutComponent from "./Hooks/customHook/LayoutComponent";
 //import GetPost2 from "./Hooks/Fetch/GetPost2";
 //import BaseComponent from "./Hooks/contextAPI/BaseComponent";
 //import Counter4 from "./Hooks/Counter4";
@@ -20,7 +23,7 @@ ReactDOM.render(
       </NewTest.Provider>
       <NewTest.Consumer>{(value) => value.theme}</NewTest.Consumer>
     </div> */}
-    <LayoutComponent />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
